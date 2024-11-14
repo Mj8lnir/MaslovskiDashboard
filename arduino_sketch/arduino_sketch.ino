@@ -1,6 +1,6 @@
-#include <OneWire.h>
-#include <DallasTemperature.h>
-#include <HX711.h>
+#include <OneWire.h>            // by Paul Stoffregen   v2.3.8  https://github.com/PaulStoffregen/OneWire
+#include <DallasTemperature.h>  // by Miles Burton      v3.9.0  https://github.com/milesburton/Arduino-Temperature-Control-Library
+#include <HX711.h>              // by Bogdan Necula     v0.7.5  https://github.com/bogde/HX711
 
 #define ONE_WIRE_BUS 4              // sensors signal pin
 #define SERIAL_BAUD_RATE 9600       // serial speed
