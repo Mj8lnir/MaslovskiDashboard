@@ -177,7 +177,7 @@ void checkTemp(DeviceAddress deviceAddress, uint8_t fanIdx, Cameras camera) {
     if (correctedValueC != DEVICE_DISCONNECTED_C) {
       if (correctedValueC >= THRESHOLD_TEMP_C) {
         startFan(fanIdx, camera);
-      } else{
+      } else {
         stopFan(fanIdx, camera);
       }
     } else {
@@ -188,13 +188,11 @@ void checkTemp(DeviceAddress deviceAddress, uint8_t fanIdx, Cameras camera) {
 // log weight
 void printWeight(HX711 hx711, Cameras camera) {
   if (hx711.is_ready()) {
-    for (int i = 0; i < 10; i ++)
-    {
+    for (int i = 0; i < 10; i ++) {
       units = + hx711.get_units(), 10;
     }
     units = units / 10;
-    if (units < 0)
-    {
+    if (units < 0) {
       units = 0.00;
     }
     gramms = units * 0.35274;
@@ -251,9 +249,6 @@ void setup() {
   camera_1_weight_sensor.set_scale(CAMERA_1_HX711_CAL_FACTOR);
   camera_2_weight_sensor.set_scale(CAMERA_2_HX711_CAL_FACTOR);
   camera_3_weight_sensor.set_scale(CAMERA_3_HX711_CAL_FACTOR);
-
-  // update temperatures
-  sensors.requestTemperatures();
 }
 
 void loop() {
